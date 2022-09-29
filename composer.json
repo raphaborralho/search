@@ -13,7 +13,7 @@
             "email": "raphaborralho@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "dev-main",
     "extra": {
         "laravel": {
             "providers": [

@@ -12,7 +12,7 @@ Package made for XLR8 with PHP 8 and Laravel.
 ## Installation
 
 ```shell
-    composer install raphaborralho/search
+    composer require raphaborralho/search
     php artisan vendor:publish
 ````
 
