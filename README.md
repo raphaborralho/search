@@ -12,8 +12,8 @@ Package made for XLR8 with PHP 8 and Laravel.
 ## Installation
 
 ```shell
-    composer require raphaborralho/search
-    php artisan vendor:publish
+composer require raphaborralho/search
+php artisan vendor:publish
 ````
 
 ## Usage
@@ -30,6 +30,15 @@ return [
     ]
 ];
 ```
+In Controller:
+```php
+use Raphaborralho\Search\Search;
+```
+In function:
+```php
+Search::getNearbyHotels($latitude, $longitude, $orderby)
+```
+
 
 ## License
 
