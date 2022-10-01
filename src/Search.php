@@ -27,19 +27,12 @@ class Search
                 return $item;
             })
             ->filter();
-        if ($orderby === 'pricepernight') {
-            return $data->sortBy('pricepernight')
-                ->transform(function ($item) {
-                    return $item[0].', '.number_format($item['proximity'], 2).' KM, '.$item['pricepernight'].' EUR';
-                })
-                ->values();
-        } else {
-            return $data->sortBy('proximity')
-                ->transform(function ($item) {
-                    return $item[0].', '.number_format($item['proximity'], 2).' KM, '.$item['pricepernight'].' EUR';
-                })
-                ->values();
-        }
+        $orderby = $orderby === 'pricepernight' ? 'pricepernight' : 'proximity';
+        return $data->sortBy($orderby)
+            ->transform(function ($item) {
+                return $item[0] . ', ' . number_format($item['proximity'], 2) . ' KM, ' . $item['pricepernight'] . ' EUR';
+            })
+            ->values();
     }
 
     /**
